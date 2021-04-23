@@ -4,7 +4,7 @@
 \alias{nested_list}
 \title{Output a nested list in RMarkdown list format}
 \usage{
-nested_list(x, pre = "", quote = "")
+nested_list(x, pre = "", quote = "", type = "unordered")
 }
 \arguments{
 \item{x}{The list}
@@ -12,6 +12,8 @@ nested_list(x, pre = "", quote = "")
 \item{pre}{Text to prefix to each line (e.g., if you want all lines indented 4 spaces to start, use "    ")}
 
 \item{quote}{Text to quote values with (e.g., use "`" to make sure values are not parsed as markdown}
+
+\item{type}{Text to specify type of lists (unorderd, ordered, headers)}
 }
 \value{
 A character string
@@ -33,4 +35,6 @@ x <- list(
   g = list()
 )
 nested_list(x)
+nested_list(x, pre = "    ")
+nested_list(x, type = "headers", pre= "#", quote = "'")
 }
